@@ -3,7 +3,7 @@ import { IPost } from "src/Models/Post";
 import { useEffect, useState } from "react";
 import Header from "src/components/Header";
 
-export default function Usuarios() {
+export default function Posts() {
   const [posts, setPosts] = useState<IPost[]>([]);
   useEffect(() => {
     const asyncGetPosts = async () => {
