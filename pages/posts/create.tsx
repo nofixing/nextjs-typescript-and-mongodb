@@ -3,21 +3,26 @@ import Header from "src/components/Header";
 import Input from "src/components/Input";
 import Router from "next/router";
 
+interface PostProps {
+  title: string,
+  content: string
+}
+
 export default function create() {
   const [post, setPost] = useState({
     title: "",
     content: "",
   });
 
-  const updatePost = (e) => {
+  const updatePost = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setPost({ ...post, [e.target.name]: e.target.value });
   };
 
   const [sent, setSent] = useState(false);
 
-  async function sendPost(data) {
+  async function sendPost(data: PostProps) {
     const saved = await fetch(window.location.origin + "/api/posts/create", {
-      method: "POSt",
+      method: "POST",
       body: JSON.stringify({
         ...data,
         date: new Date(),
