@@ -14,7 +14,7 @@ or
 
 When starting the dev server, pass an env. variable with the URI for the MongoDB connection.
 
-`MONGO_URI="my-mongodb-uri" npm run dev`
+`MONGODB_URI="my-mongodb-uri" npm run dev`
 
 Since serverless doesn't save variables after an api call, you need to create the connection inside each request, calling the function `connectToDatabase` that is inside utils.
 

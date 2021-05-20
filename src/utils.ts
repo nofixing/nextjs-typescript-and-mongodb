@@ -1,10 +1,10 @@
 import { connect, ConnectionOptions } from "mongoose"
 const {
     // Attempts to connect to MongoDB and then tries to connect locally:)
-    MONGO_URI = "mongodb://localhost:27017/next_test"
+    MONGODB_URI = "mongodb://localhost:27017/next_test"
 } = process.env
 
-console.log(MONGO_URI)
+console.log(MONGODB_URI)
 
 const options: ConnectionOptions = {
     useFindAndModify: true,
@@ -13,4 +13,4 @@ const options: ConnectionOptions = {
     useNewUrlParser: true
 }
 
-export const connectToDatabase = () => connect(MONGO_URI, options)
+export const connectToDatabase = () => connect(MONGODB_URI, options)
